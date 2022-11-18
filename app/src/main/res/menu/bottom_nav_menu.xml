@@ -2,22 +2,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/main"
+        android:id="@+id/mainButtonMenu"
         android:icon="@drawable/icon_awesome_play"
         android:title="Main" />
 
     <item
-        android:id="@+id/playlists"
+        android:id="@+id/playlistsButtonMenu"
         android:icon="@drawable/icon_awesome_book_open"
         android:title="Playlists" />
 
     <item
-        android:id="@+id/streaming"
+        android:id="@+id/streamingButtonMenu"
         android:icon="@drawable/icon_material_radio"
         android:title="Streaming" />
 
     <item
-        android:id="@+id/profile"
+        android:id="@+id/profileButtonMenu"
         android:icon="@drawable/icon_material_person"
         android:title="Profile" />
 </menu>

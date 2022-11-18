@@ -8,9 +8,12 @@ import android.widget.Button;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
-public class MainFragment extends Fragment {
-    Button newFor;
+public class MainFragment extends Fragment implements View.OnClickListener {
+    private Button mNewForButton;
+    private View mView;
+    private NewForFragment mNewForFragment;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -18,18 +21,23 @@ public class MainFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_main, container, false);
-        newFor = (Button) view.findViewById(R.id.newForButton);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        mView = inflater.inflate(R.layout.fragment_main, container, false);
 
-        newFor.setOnClickListener(view1 -> {
-            NewForFragment newForFragment = new NewForFragment();
+        mNewForButton = (Button) mView.findViewById(R.id.newForButton);
+        mNewForButton.setOnClickListener(this);
 
-            //getParentFragmentManager().beginTransaction().replace(R.id.main_frame, newForFragment).commit();
-        });
+        mNewForFragment = new NewForFragment();
 
-        return view;
+        return mView;
+    }
+
+    @Override
+    public void onClick(View view) {
+        FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+
+        if (view.getId() == R.id.newForButton) {
+            fragmentTransaction.setReorderingAllowed(true).replace(R.id.fragmentMainActivity, mNewForFragment).commit();
+        }
     }
 }
