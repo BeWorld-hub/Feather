@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/main"
+        android:icon="@drawable/icon_awesome_play"
+        android:title="Main" />
+
+    <item
+        android:id="@+id/playlists"
+        android:icon="@drawable/icon_awesome_book_open"
+        android:title="Playlists" />
+
+    <item
+        android:id="@+id/streaming"
+        android:icon="@drawable/icon_material_radio"
+        android:title="Streaming" />
+
+    <item
+        android:id="@+id/profile"
+        android:icon="@drawable/icon_material_person"
+        android:title="Profile" />
+</menu>
