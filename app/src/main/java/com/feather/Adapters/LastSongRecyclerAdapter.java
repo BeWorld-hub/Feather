@@ -1,4 +1,4 @@
-package com.feather;
+package com.feather.Adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.feather.R;
 import com.feather.dataElements.DataLastSong;
 
 import java.util.Stack;

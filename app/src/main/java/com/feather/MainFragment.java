@@ -12,8 +12,12 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.feather.Adapters.LastSongRecyclerAdapter;
+import com.feather.Adapters.PlaylistAdapter;
 import com.feather.dataElements.DataLastSong;
+import com.feather.dataElements.DataPlaylist;
 
+import java.util.ArrayList;
 import java.util.Stack;
 
 public class MainFragment extends Fragment implements View.OnClickListener, LastSongRecyclerAdapter.OnCardListener {
@@ -45,20 +49,30 @@ public class MainFragment extends Fragment implements View.OnClickListener, Last
 
         mNewForButton = (Button) mView.findViewById(R.id.newForButton);
         mNewForButton.setOnClickListener(this);
-
         mNewForFragment = new NewForFragment();
 
         initalizeData();
-        RecyclerView recyclerView = mView.findViewById(R.id.recyclerLastSongs);
-        recyclerView.setLayoutManager(new GridLayoutManager(mView.getContext(), 2) {
+
+        RecyclerView recyclerLastSongs = mView.findViewById(R.id.recyclerLastSongs);
+        recyclerLastSongs.setLayoutManager(new GridLayoutManager(mView.getContext(), 2) {
             @Override
             public boolean canScrollVertically() {
                 return false;
             }
         });
+        LastSongRecyclerAdapter lastSongsRecyclerAdapter = new LastSongRecyclerAdapter(lastSongs, this);
+        recyclerLastSongs.setAdapter(lastSongsRecyclerAdapter);
 
-        LastSongRecyclerAdapter recyclerAdapter = new LastSongRecyclerAdapter(lastSongs, this);
-        recyclerView.setAdapter(recyclerAdapter);
+        HandlerRecycler handlerRecyclerPlaylists = new HandlerRecycler(mView, R.id.recyclerPlaylistsNewForYou);
+        handlerRecyclerPlaylists.createVerticalNonScrollablePlaylists(4, false);
+
+        HandlerRecycler handlerRecyclerAtTrend = new HandlerRecycler(mView, R.id.recyclerAtTrend);
+        handlerRecyclerAtTrend.createVerticalNonScrollablePlaylists(4, false);
+
+        HandlerRecycler handlerRecyclerMusicalSelections = new HandlerRecycler(mView, R.id.recyclerMusicalSelections);
+        handlerRecyclerMusicalSelections.createHorizontalScrollablePlaylists(4, 1);
+
+
 
         return mView;
     }
