@@ -13,11 +13,8 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.feather.Adapters.LastSongRecyclerAdapter;
-import com.feather.Adapters.PlaylistAdapter;
 import com.feather.dataElements.DataLastSong;
-import com.feather.dataElements.DataPlaylist;
 
-import java.util.ArrayList;
 import java.util.Stack;
 
 public class MainFragment extends Fragment implements View.OnClickListener, LastSongRecyclerAdapter.OnCardListener {
@@ -63,13 +60,13 @@ public class MainFragment extends Fragment implements View.OnClickListener, Last
         LastSongRecyclerAdapter lastSongsRecyclerAdapter = new LastSongRecyclerAdapter(lastSongs, this);
         recyclerLastSongs.setAdapter(lastSongsRecyclerAdapter);
 
-        HandlerRecycler handlerRecyclerPlaylists = new HandlerRecycler(mView, R.id.recyclerPlaylistsNewForYou);
+        HandlerRecyclerPlaylists handlerRecyclerPlaylists = new HandlerRecyclerPlaylists(mView, R.id.recyclerPlaylistsNewForYou, getActivity());
         handlerRecyclerPlaylists.createVerticalNonScrollablePlaylists(4, false);
 
-        HandlerRecycler handlerRecyclerAtTrend = new HandlerRecycler(mView, R.id.recyclerAtTrend);
+        HandlerRecyclerPlaylists handlerRecyclerAtTrend = new HandlerRecyclerPlaylists(mView, R.id.recyclerAtTrend, getActivity());
         handlerRecyclerAtTrend.createVerticalNonScrollablePlaylists(4, false);
 
-        HandlerRecycler handlerRecyclerMusicalSelections = new HandlerRecycler(mView, R.id.recyclerMusicalSelections);
+        HandlerRecyclerPlaylists handlerRecyclerMusicalSelections = new HandlerRecyclerPlaylists(mView, R.id.recyclerMusicalSelections, getActivity());
         handlerRecyclerMusicalSelections.createHorizontalScrollablePlaylists(4, 1);
 
 
