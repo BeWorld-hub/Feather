@@ -3,6 +3,7 @@ package com.feather;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,7 +17,23 @@ public class PlaylistsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_playlists, container, false);
+        View view = inflater.inflate(R.layout.fragment_playlists, container, false);
+
+        HandlerRecyclerPlaylists handlerRecyclerNewPlaylists = new HandlerRecyclerPlaylists(view,
+                R.id.recyclerNewPlaylists, getActivity());
+        handlerRecyclerNewPlaylists.createPlaylists(4, false,
+                GridLayoutManager.VERTICAL, 2);
+
+        HandlerRecyclerPlaylists handlerRecyclerAtTrendPlaylists = new HandlerRecyclerPlaylists(view,
+                R.id.recyclerAtTrendPlaylists, getActivity());
+        handlerRecyclerAtTrendPlaylists.createPlaylists(4, false,
+                GridLayoutManager.VERTICAL, 2);
+
+        HandlerRecyclerPlaylists handlerRecyclerSelectionPlaylists = new HandlerRecyclerPlaylists(view,
+                R.id.recyclerSelectionPlaylists, getActivity());
+        handlerRecyclerSelectionPlaylists.createPlaylists(4, true,
+                GridLayoutManager.HORIZONTAL, 1);
+
+        return view;
     }
 }

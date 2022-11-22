@@ -11,17 +11,22 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
-public class BasicConstructionFragment extends Fragment implements NavigationBarView.OnItemSelectedListener {
+public class BasicConstructionFragment extends Fragment implements NavigationBarView.OnItemSelectedListener, View.OnClickListener {
     private BottomNavigationView mMenu;
+    private ImageButton mButtonSetting;
+    private ImageButton mButtonHistory;
 
     private MainFragment mMainFragment;
     private PlaylistsFragment mPlaylistsFragment;
     private StreamingFragment mStreamingFragment;
     private ProfileFragment mProfileFragment;
+    private SettingsFragment mSettingsFragment;
+    private HistoryFragment mHistoryFragment;
 
     public BasicConstructionFragment() {
         super(R.layout.fragment_basic_construction);
@@ -30,7 +35,8 @@ public class BasicConstructionFragment extends Fragment implements NavigationBar
         mPlaylistsFragment = new PlaylistsFragment();
         mStreamingFragment = new StreamingFragment();
         mProfileFragment = new ProfileFragment();
-
+        mSettingsFragment = new SettingsFragment();
+        mHistoryFragment = new HistoryFragment();
     }
 
     @Override
@@ -45,6 +51,12 @@ public class BasicConstructionFragment extends Fragment implements NavigationBar
         mMenu = view.findViewById(R.id.bottom_menu);
         mMenu.setOnItemSelectedListener(this);
 
+        mButtonSetting = view.findViewById(R.id.buttonSettings);
+        mButtonSetting.setOnClickListener(this);
+
+        mButtonHistory = view.findViewById(R.id.buttonHistory);
+        mButtonHistory.setOnClickListener(this);
+
 
         return view;
     }
@@ -56,18 +68,28 @@ public class BasicConstructionFragment extends Fragment implements NavigationBar
 
         if (item.getItemId() == R.id.mainButtonMenu) {
             newFragment = mMainFragment;
-        }
-        else if (item.getItemId() == R.id.playlistsButtonMenu) {
+        } else if (item.getItemId() == R.id.playlistsButtonMenu) {
             newFragment = mPlaylistsFragment;
-        }
-        else if (item.getItemId() == R.id.streamingButtonMenu) {
+        } else if (item.getItemId() == R.id.streamingButtonMenu) {
             newFragment = mStreamingFragment;
-        }
-        else if (item.getItemId() == R.id.profileButtonMenu) {
+        } else if (item.getItemId() == R.id.profileButtonMenu) {
             newFragment = mProfileFragment;
         }
         fragmentTransaction.setReorderingAllowed(true).replace(R.id.fragmentMain, newFragment).commit();
 
         return false;
+    }
+
+    @Override
+    public void onClick(View view) {
+        FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager()
+                .beginTransaction().setReorderingAllowed(true);
+
+        if (view.getId() == R.id.buttonSettings){
+            fragmentTransaction.replace(R.id.fragmentMainActivity, mSettingsFragment).commit();
+        }
+        else if (view.getId() == R.id.buttonHistory) {
+            fragmentTransaction.replace(R.id.fragmentMainActivity, mHistoryFragment).commit();
+        }
     }
 }

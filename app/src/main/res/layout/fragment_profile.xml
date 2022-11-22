@@ -47,7 +47,14 @@
 
     </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerProfileSongs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <!--androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="60dp"
         app:cardBackgroundColor="@android:color/transparent"
@@ -150,7 +157,7 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView-->
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>

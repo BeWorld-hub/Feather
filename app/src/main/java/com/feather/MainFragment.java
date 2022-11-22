@@ -12,27 +12,27 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.feather.Adapters.LastSongRecyclerAdapter;
-import com.feather.dataElements.DataLastSong;
+import com.feather.Adapters.SongRecyclerAdapter;
+import com.feather.dataElements.DataSong;
 
 import java.util.Stack;
 
-public class MainFragment extends Fragment implements View.OnClickListener, LastSongRecyclerAdapter.OnCardListener {
+public class MainFragment extends Fragment implements View.OnClickListener, SongRecyclerAdapter.OnSongCardListener {
     private Button mNewForButton;
     private View mView;
     private NewForFragment mNewForFragment;
 
-    private Stack<DataLastSong> lastSongs;
+    private Stack<DataSong> lastSongs;
 
     private void initalizeData() {
-        lastSongs = new Stack<DataLastSong>();
+        lastSongs = new Stack<DataSong>();
 
-        lastSongs.add(new DataLastSong("test", R.drawable.icon_awesome_book_open, 1));
-        lastSongs.add(new DataLastSong("test", R.drawable.icon_awesome_book_open, 1));
-        lastSongs.add(new DataLastSong("test", R.drawable.icon_awesome_book_open, 1));
-        lastSongs.add(new DataLastSong("test", R.drawable.icon_awesome_book_open, 1));
-        lastSongs.add(new DataLastSong("test", R.drawable.icon_awesome_book_open, 1));
-        lastSongs.add(new DataLastSong("test", R.drawable.icon_awesome_book_open, 1));
+        lastSongs.add(new DataSong("test", R.drawable.icon_awesome_book_open, 1));
+        lastSongs.add(new DataSong("test", R.drawable.icon_awesome_book_open, 1));
+        lastSongs.add(new DataSong("test", R.drawable.icon_awesome_book_open, 1));
+        lastSongs.add(new DataSong("test", R.drawable.icon_awesome_book_open, 1));
+        lastSongs.add(new DataSong("test", R.drawable.icon_awesome_book_open, 1));
+        lastSongs.add(new DataSong("test", R.drawable.icon_awesome_book_open, 1));
     }
 
     @Override
@@ -57,17 +57,17 @@ public class MainFragment extends Fragment implements View.OnClickListener, Last
                 return false;
             }
         });
-        LastSongRecyclerAdapter lastSongsRecyclerAdapter = new LastSongRecyclerAdapter(lastSongs, this);
+        SongRecyclerAdapter lastSongsRecyclerAdapter = new SongRecyclerAdapter(lastSongs, this, R.layout.card_view_last_song);
         recyclerLastSongs.setAdapter(lastSongsRecyclerAdapter);
 
         HandlerRecyclerPlaylists handlerRecyclerPlaylists = new HandlerRecyclerPlaylists(mView, R.id.recyclerPlaylistsNewForYou, getActivity());
-        handlerRecyclerPlaylists.createVerticalNonScrollablePlaylists(4, false);
+        handlerRecyclerPlaylists.createPlaylists(4, false, GridLayoutManager.VERTICAL, 2);
 
         HandlerRecyclerPlaylists handlerRecyclerAtTrend = new HandlerRecyclerPlaylists(mView, R.id.recyclerAtTrend, getActivity());
-        handlerRecyclerAtTrend.createVerticalNonScrollablePlaylists(4, false);
+        handlerRecyclerAtTrend.createPlaylists(4, false, GridLayoutManager.VERTICAL, 2);
 
         HandlerRecyclerPlaylists handlerRecyclerMusicalSelections = new HandlerRecyclerPlaylists(mView, R.id.recyclerMusicalSelections, getActivity());
-        handlerRecyclerMusicalSelections.createHorizontalScrollablePlaylists(4, 1);
+        handlerRecyclerMusicalSelections.createPlaylists(4, true, GridLayoutManager.HORIZONTAL, 1);
 
 
 
@@ -84,7 +84,7 @@ public class MainFragment extends Fragment implements View.OnClickListener, Last
     }
 
     @Override
-    public void onCardClick(int position) {
+    public void onSongCardClick(int position) {
         getActivity().getSupportFragmentManager().beginTransaction().setReorderingAllowed(true)
                 .replace(R.id.fragmentMainActivity, new PlaylistFragment()).commit();
     }

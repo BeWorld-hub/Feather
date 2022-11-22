@@ -21,116 +21,17 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingVertical="8dp"
                 android:text="В эфире"
-                android:textAlignment="center"
-                android:paddingVertical="8dp"/>
+                android:textAlignment="center" />
 
-            <HorizontalScrollView
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerOnAir"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
-                android:scrollbars="none">
+                android:orientation="horizontal">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/cardView0"
-                        android:layout_width="160dp"
-                        android:layout_height="160dp"
-                        android:layout_marginLeft="16dp"
-                        app:cardBackgroundColor="#707070"
-                        app:cardCornerRadius="10dp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/cardView1"
-                        android:layout_width="160dp"
-                        android:layout_height="160dp"
-                        android:layout_marginStart="8dp"
-                        app:cardBackgroundColor="#707070"
-                        app:cardCornerRadius="10dp"
-                        app:layout_constraintStart_toEndOf="@id/cardView0"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/cardView2"
-                        android:layout_width="160dp"
-                        android:layout_height="160dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginEnd="8dp"
-                        app:cardBackgroundColor="#707070"
-                        app:cardCornerRadius="10dp"
-                        app:layout_constraintEnd_toStartOf="@id/cardView3"
-                        app:layout_constraintStart_toEndOf="@id/cardView1"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/cardView3"
-                        android:layout_width="160dp"
-                        android:layout_height="160dp"
-                        android:layout_marginRight="16dp"
-                        app:cardBackgroundColor="#707070"
-                        app:cardCornerRadius="10dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/cardView4"
-                        android:layout_width="160dp"
-                        android:layout_height="160dp"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginTop="8dp"
-                        app:cardBackgroundColor="#707070"
-                        app:cardCornerRadius="10dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/cardView0" />
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/cardView5"
-                        android:layout_width="160dp"
-                        android:layout_height="160dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="8dp"
-                        app:cardBackgroundColor="#707070"
-                        app:cardCornerRadius="10dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toEndOf="@id/cardView4"
-                        app:layout_constraintTop_toBottomOf="@id/cardView1" />
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/cardView6"
-                        android:layout_width="160dp"
-                        android:layout_height="160dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginEnd="8dp"
-                        app:cardBackgroundColor="#707070"
-                        app:cardCornerRadius="10dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@id/cardView7"
-                        app:layout_constraintStart_toEndOf="@id/cardView5"
-                        app:layout_constraintTop_toBottomOf="@id/cardView2" />
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/cardView7"
-                        android:layout_width="160dp"
-                        android:layout_height="160dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginRight="16dp"
-                        app:cardBackgroundColor="#707070"
-                        app:cardCornerRadius="10dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/cardView3" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </HorizontalScrollView>
+            </androidx.recyclerview.widget.RecyclerView>
 
             <TextView
                 android:layout_width="match_parent"
@@ -139,55 +40,13 @@
                 android:textAlignment="center"
                 android:textStyle="bold" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerPremiers"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginBottom="50dp">
+                android:orientation="vertical">
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardView8"
-                    android:layout_width="160dp"
-                    android:layout_height="160dp"
-                    app:cardBackgroundColor="#707070"
-                    app:cardCornerRadius="10dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardView9"
-                    android:layout_width="160dp"
-                    android:layout_height="160dp"
-                    app:cardBackgroundColor="#707070"
-                    app:cardCornerRadius="10dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardView10"
-                    android:layout_width="160dp"
-                    android:layout_height="160dp"
-                    android:layout_marginTop="8dp"
-                    app:cardBackgroundColor="#707070"
-                    app:cardCornerRadius="10dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cardView8"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardView11"
-                    android:layout_width="160dp"
-                    android:layout_height="160dp"
-                    android:layout_marginTop="8dp"
-                    app:cardBackgroundColor="#707070"
-                    app:cardCornerRadius="10dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cardView9"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
+            </androidx.recyclerview.widget.RecyclerView>
 
         </LinearLayout>
 

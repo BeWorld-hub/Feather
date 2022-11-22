@@ -1,11 +1,11 @@
 package com.feather.dataElements;
 
-public class DataLastSong {
+public class DataSong {
     public String mNameSong;
     public int mSongImageID;
     private int mSongID;
 
-    public DataLastSong(String nameSong, int imageID, int songID) {
+    public DataSong(String nameSong, int imageID, int songID) {
         mNameSong = nameSong;
         mSongImageID = imageID;
         mSongID = songID;

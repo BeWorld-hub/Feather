@@ -4,7 +4,6 @@ import android.view.View;
 
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.feather.Adapters.PlaylistAdapter;
@@ -29,39 +28,34 @@ public class HandlerRecyclerPlaylists implements PlaylistAdapter.OnPlaylistListe
         mParentActivity = parentActivity;
     }
 
-    public void createVerticalNonScrollablePlaylists(int playlistsAmount, boolean isScrollable) {
+    public void createPlaylists(int playlistsAmount, boolean isScrollable, int orientation, int spanCount) {
         for (int numPlaylist = 0; numPlaylist < playlistsAmount; numPlaylist++) {
             playlists.add(new DataPlaylist(R.drawable.icon_awesome_book_open));
         }
 
         mAdapter = new PlaylistAdapter(playlists, (PlaylistAdapter.OnPlaylistListener) this, mParentActivity);
+        GridLayoutManager gridLayoutManager;
 
-        if (isScrollable) {
-            recyclerView.setLayoutManager(new GridLayoutManager(mView.getContext(), 2));
+        if (orientation == GridLayoutManager.HORIZONTAL) {
+            gridLayoutManager = new GridLayoutManager(mView.getContext(), spanCount) {
+                @Override
+                public boolean canScrollHorizontally() {
+                    return isScrollable;
+                }
+            };
         }
         else {
-            recyclerView.setLayoutManager(new GridLayoutManager(mView.getContext(), 2) {
+            gridLayoutManager = new GridLayoutManager(mView.getContext(), spanCount) {
                 @Override
                 public boolean canScrollVertically() {
-                    return false;
+                    return isScrollable;
                 }
-            });
+            };
         }
 
-        recyclerView.setAdapter(mAdapter);
-    }
+        gridLayoutManager.setOrientation(orientation);
 
-    public void createHorizontalScrollablePlaylists(int playlistsAmount, int rowAmount) {
-        for (int numPlaylist = 0; numPlaylist < playlistsAmount; numPlaylist++) {
-            playlists.add(new DataPlaylist(R.drawable.icon_awesome_book_open));
-        }
-
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mView.getContext());
-        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-
-        mAdapter = new PlaylistAdapter(playlists, (PlaylistAdapter.OnPlaylistListener) this, mParentActivity);
-        recyclerView.setLayoutManager(linearLayoutManager);
-
+        recyclerView.setLayoutManager(gridLayoutManager);
         recyclerView.setAdapter(mAdapter);
     }
 
