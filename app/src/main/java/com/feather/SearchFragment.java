@@ -34,6 +34,42 @@ public class SearchFragment extends Fragment {
         songs.add(new DataSong("Test", R.drawable.icon_awesome_book_open, 1));
         songs.add(new DataSong("Test", R.drawable.icon_awesome_book_open, 1));
         songs.add(new DataSong("Test", R.drawable.icon_awesome_book_open, 1));
+        songs.add(new DataSong("Test", R.drawable.icon_awesome_book_open, 1));
+        songs.add(new DataSong("Test", R.drawable.icon_awesome_book_open, 1));
+        songs.add(new DataSong("Test", R.drawable.icon_awesome_book_open, 1));
+        songs.add(new DataSong("Test", R.drawable.icon_awesome_book_open, 1));
+        songs.add(new DataSong("Test", R.drawable.icon_awesome_book_open, 1));
+        songs.add(new DataSong("Test", R.drawable.icon_awesome_book_open, 1));
+        songs.add(new DataSong("Test", R.drawable.icon_awesome_book_open, 1));
+        songs.add(new DataSong("Test", R.drawable.icon_awesome_book_open, 1));
+        songs.add(new DataSong("Test", R.drawable.icon_awesome_book_open, 1));
+        songs.add(new DataSong("Test", R.drawable.icon_awesome_book_open, 1));
+        songs.add(new DataSong("Test", R.drawable.icon_awesome_book_open, 1));
+        songs.add(new DataSong("Test", R.drawable.icon_awesome_book_open, 1));
+        songs.add(new DataSong("Test", R.drawable.icon_awesome_book_open, 1));
+        songs.add(new DataSong("Test", R.drawable.icon_awesome_book_open, 1));
+        songs.add(new DataSong("Test", R.drawable.icon_awesome_book_open, 1));
+        songs.add(new DataSong("Test", R.drawable.icon_awesome_book_open, 1));
+        songs.add(new DataSong("Test", R.drawable.icon_awesome_book_open, 1));
+        songs.add(new DataSong("Test", R.drawable.icon_awesome_book_open, 1));
+        songs.add(new DataSong("Test", R.drawable.icon_awesome_book_open, 1));
+        songs.add(new DataSong("Test", R.drawable.icon_awesome_book_open, 1));
+        songs.add(new DataSong("Test", R.drawable.icon_awesome_book_open, 1));
+        songs.add(new DataSong("Test", R.drawable.icon_awesome_book_open, 1));
+        songs.add(new DataSong("Test", R.drawable.icon_awesome_book_open, 1));
+        songs.add(new DataSong("Test", R.drawable.icon_awesome_book_open, 1));
+        songs.add(new DataSong("Test", R.drawable.icon_awesome_book_open, 1));
+        songs.add(new DataSong("Test", R.drawable.icon_awesome_book_open, 1));
+        songs.add(new DataSong("Test", R.drawable.icon_awesome_book_open, 1));
+        songs.add(new DataSong("Test", R.drawable.icon_awesome_book_open, 1));
+        songs.add(new DataSong("Test", R.drawable.icon_awesome_book_open, 1));
+        songs.add(new DataSong("Test", R.drawable.icon_awesome_book_open, 1));
+        songs.add(new DataSong("Test", R.drawable.icon_awesome_book_open, 1));
+        songs.add(new DataSong("Test", R.drawable.icon_awesome_book_open, 1));
+        songs.add(new DataSong("Test", R.drawable.icon_awesome_book_open, 1));
+        songs.add(new DataSong("Test", R.drawable.icon_awesome_book_open, 1));
+        songs.add(new DataSong("Test", R.drawable.icon_awesome_book_open, 1));
+        songs.add(new DataSong("Test", R.drawable.icon_awesome_book_open, 1));
 
 
 

@@ -38,22 +38,12 @@ public class HandlerRecyclerSongs implements SongRecyclerAdapter.OnSongCardListe
 
         LinearLayoutManager linearLayoutManager;
 
-        if (isScrollable) {
-            linearLayoutManager = new LinearLayoutManager(mView.getContext()) {
-                @Override
-                public boolean canScrollVertically() {
-                    return true;
-                }
-            };
-        }
-        else {
-            linearLayoutManager = new LinearLayoutManager(mView.getContext()) {
-                @Override
-                public boolean canScrollVertically() {
-                    return false;
-                }
-            };
-        }
+        linearLayoutManager = new LinearLayoutManager(mView.getContext()) {
+            @Override
+            public boolean canScrollVertically() {
+                return isScrollable;
+            }
+        };
 
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
 
