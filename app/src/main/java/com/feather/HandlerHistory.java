@@ -5,6 +5,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.fragment.app.FragmentActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.feather.dataElements.DataSong;
@@ -15,30 +16,43 @@ import java.util.Stack;
 public class HandlerHistory {
     private View mParentView;
     private FragmentActivity mParentActivity;
-    private LinearLayout mFragmentContainer;
     private LinearLayout mListSongs;
+    private RecyclerView mRecyclerSongs;
 
+    public HandlerHistory(View parentView, FragmentActivity parentActivity,
+                          int containerSongsID) {
+        this.mParentView = parentView;
+        mParentActivity = parentActivity;
+        mRecyclerSongs = parentView.findViewById(containerSongsID);
+    }
     public HandlerHistory(View parentView, FragmentActivity parentActivity) {
         this.mParentView = parentView;
-        mFragmentContainer = parentView.findViewById(R.id.fragmentHistory);
-        mListSongs = parentView.findViewById(R.id.linearLayoutSongsList);
         mParentActivity = parentActivity;
     }
 
-    public void createHistoryList(ArrayList<Stack<DataSong>> songs) {
+    public void createListenedHistoryList(ArrayList<Stack<DataSong>> songs) {
+        mListSongs = mParentView.findViewById(R.id.linearLayoutListenedSongsList);
+
         songs.stream().forEach((currentDateSongs) -> {
             TextView nameDay = new TextView(mListSongs.getContext());
             nameDay.setText("TEST");
 
             RecyclerView recyclerView = new RecyclerView(mListSongs.getContext());
-            recyclerView.setTag("test");
 
             mListSongs.addView(nameDay);
             mListSongs.addView(recyclerView);
 
             HandlerRecyclerSongs handlerRecyclerSongs = new HandlerRecyclerSongs(mParentView,
                     mParentActivity, recyclerView, currentDateSongs);
-            handlerRecyclerSongs.createSongsList();
+            handlerRecyclerSongs.createSongsList(false);
         });
     }
+
+    public void createSearchedHistoryList(Stack<DataSong> songs) {
+        HandlerRecyclerSongs handlerRecyclerSongs = new HandlerRecyclerSongs(mParentView,
+                mParentActivity, mRecyclerSongs, songs);
+        handlerRecyclerSongs.createSongsList(true);
+    }
+
+
 }

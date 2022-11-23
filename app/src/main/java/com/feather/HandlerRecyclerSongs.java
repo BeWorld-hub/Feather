@@ -33,15 +33,28 @@ public class HandlerRecyclerSongs implements SongRecyclerAdapter.OnSongCardListe
         mSongs = songs;
     }
 
-    public void createSongsList() {
+    public void createSongsList(boolean isScrollable) {
         mAdapter = new SongRecyclerAdapter(mSongs, this, R.layout.card_view_song);
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mView.getContext()) {
-            @Override
-            public boolean canScrollVertically() {
-                return false;
-            }
-        };
+        LinearLayoutManager linearLayoutManager;
+
+        if (isScrollable) {
+            linearLayoutManager = new LinearLayoutManager(mView.getContext()) {
+                @Override
+                public boolean canScrollVertically() {
+                    return true;
+                }
+            };
+        }
+        else {
+            linearLayoutManager = new LinearLayoutManager(mView.getContext()) {
+                @Override
+                public boolean canScrollVertically() {
+                    return false;
+                }
+            };
+        }
+
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
 
         mRecyclerView.setLayoutManager(linearLayoutManager);

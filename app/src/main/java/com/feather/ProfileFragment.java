@@ -35,7 +35,7 @@ public class ProfileFragment extends Fragment {
         HandlerRecyclerSongs handlerRecyclerSongs = new HandlerRecyclerSongs(view, getActivity(),
                 R.id.recyclerProfileSongs, songs);
 
-        handlerRecyclerSongs.createSongsList();
+        handlerRecyclerSongs.createSongsList(false);
 
         return view;
     }

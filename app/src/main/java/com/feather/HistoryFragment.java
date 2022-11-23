@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 
 import com.feather.dataElements.DataSong;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Stack;
 
@@ -46,7 +45,7 @@ public class HistoryFragment extends Fragment {
         arrayList.add(stack2);
 
         HandlerHistory handlerHistory = new HandlerHistory(view, getActivity());
-        handlerHistory.createHistoryList(arrayList);
+        handlerHistory.createListenedHistoryList(arrayList);
 
         return view;
     }

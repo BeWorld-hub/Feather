@@ -4,7 +4,6 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
@@ -20,6 +19,7 @@ public class BasicConstructionFragment extends Fragment implements NavigationBar
     private BottomNavigationView mMenu;
     private ImageButton mButtonSetting;
     private ImageButton mButtonHistory;
+    private ImageButton mButtonSearch;
 
     private MainFragment mMainFragment;
     private PlaylistsFragment mPlaylistsFragment;
@@ -27,6 +27,7 @@ public class BasicConstructionFragment extends Fragment implements NavigationBar
     private ProfileFragment mProfileFragment;
     private SettingsFragment mSettingsFragment;
     private HistoryFragment mHistoryFragment;
+    private SearchFragment mSearchFragment;
 
     public BasicConstructionFragment() {
         super(R.layout.fragment_basic_construction);
@@ -37,6 +38,7 @@ public class BasicConstructionFragment extends Fragment implements NavigationBar
         mProfileFragment = new ProfileFragment();
         mSettingsFragment = new SettingsFragment();
         mHistoryFragment = new HistoryFragment();
+        mSearchFragment = new SearchFragment();
     }
 
     @Override
@@ -56,6 +58,9 @@ public class BasicConstructionFragment extends Fragment implements NavigationBar
 
         mButtonHistory = view.findViewById(R.id.buttonHistory);
         mButtonHistory.setOnClickListener(this);
+
+        mButtonSearch = view.findViewById(R.id.buttonSearch);
+        mButtonSearch.setOnClickListener(this);
 
 
         return view;
@@ -90,6 +95,9 @@ public class BasicConstructionFragment extends Fragment implements NavigationBar
         }
         else if (view.getId() == R.id.buttonHistory) {
             fragmentTransaction.replace(R.id.fragmentMainActivity, mHistoryFragment).commit();
+        }
+        else if (view.getId() == R.id.buttonSearch) {
+            fragmentTransaction.replace(R.id.fragmentMainActivity, mSearchFragment).commit();
         }
     }
 }
