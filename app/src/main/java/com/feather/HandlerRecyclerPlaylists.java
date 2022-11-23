@@ -33,7 +33,7 @@ public class HandlerRecyclerPlaylists implements PlaylistAdapter.OnPlaylistListe
             playlists.add(new DataPlaylist(R.drawable.icon_awesome_book_open));
         }
 
-        mAdapter = new PlaylistAdapter(playlists, (PlaylistAdapter.OnPlaylistListener) this, mParentActivity);
+        mAdapter = new PlaylistAdapter(playlists, this, mParentActivity);
         GridLayoutManager gridLayoutManager;
 
         if (orientation == GridLayoutManager.HORIZONTAL) {

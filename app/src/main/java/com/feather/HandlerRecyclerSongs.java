@@ -14,7 +14,7 @@ import java.util.Stack;
 public class HandlerRecyclerSongs implements SongRecyclerAdapter.OnSongCardListener {
     private View mView;
     private int mRecyclerID;
-    private RecyclerView recyclerView;
+    private RecyclerView mRecyclerView;
     private SongRecyclerAdapter mAdapter;
     private Stack<DataSong> mSongs;
     private FragmentActivity mParentActivity;
@@ -24,21 +24,33 @@ public class HandlerRecyclerSongs implements SongRecyclerAdapter.OnSongCardListe
         mParentActivity = parentActivity;
         mRecyclerID = recyclerID;
         mSongs = songs;
-        recyclerView = mView.findViewById(recyclerID);
+        mRecyclerView = mView.findViewById(recyclerID);
+    }
+    public HandlerRecyclerSongs(View parentView, FragmentActivity parentActivity, RecyclerView recyclerView, Stack<DataSong> songs) {
+        mView = parentView;
+        mParentActivity = parentActivity;
+        mRecyclerView = recyclerView;
+        mSongs = songs;
     }
 
     public void createSongsList() {
         mAdapter = new SongRecyclerAdapter(mSongs, this, R.layout.card_view_song);
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mView.getContext());
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mView.getContext()) {
+            @Override
+            public boolean canScrollVertically() {
+                return false;
+            }
+        };
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
 
-        recyclerView.setLayoutManager(linearLayoutManager);
-        recyclerView.setAdapter(mAdapter);
+        mRecyclerView.setLayoutManager(linearLayoutManager);
+        mRecyclerView.setAdapter(mAdapter);
     }
 
     @Override
     public void onSongCardClick(int position) {
-
+        mParentActivity.getSupportFragmentManager().beginTransaction().setReorderingAllowed(true)
+                .replace(R.id.fragmentMainActivity, new PlaylistFragment()).commit();
     }
 }
