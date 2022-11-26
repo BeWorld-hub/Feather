@@ -61,13 +61,13 @@ public class MainFragment extends Fragment implements View.OnClickListener, Song
         recyclerLastSongs.setAdapter(lastSongsRecyclerAdapter);
 
         HandlerRecyclerPlaylists handlerRecyclerPlaylists = new HandlerRecyclerPlaylists(mView, R.id.recyclerPlaylistsNewForYou, getActivity());
-        handlerRecyclerPlaylists.createPlaylists(4, false, GridLayoutManager.VERTICAL, 2);
+        handlerRecyclerPlaylists.createPlaylists(4, false, GridLayoutManager.VERTICAL, 2, R.layout.card_view_playlist);
 
         HandlerRecyclerPlaylists handlerRecyclerAtTrend = new HandlerRecyclerPlaylists(mView, R.id.recyclerAtTrend, getActivity());
-        handlerRecyclerAtTrend.createPlaylists(4, false, GridLayoutManager.VERTICAL, 2);
+        handlerRecyclerAtTrend.createPlaylists(4, false, GridLayoutManager.VERTICAL, 2, R.layout.card_view_playlist);
 
         HandlerRecyclerPlaylists handlerRecyclerMusicalSelections = new HandlerRecyclerPlaylists(mView, R.id.recyclerMusicalSelections, getActivity());
-        handlerRecyclerMusicalSelections.createPlaylists(4, true, GridLayoutManager.HORIZONTAL, 1);
+        handlerRecyclerMusicalSelections.createPlaylists(4, true, GridLayoutManager.HORIZONTAL, 1, R.layout.card_view_playlist);
 
 
 

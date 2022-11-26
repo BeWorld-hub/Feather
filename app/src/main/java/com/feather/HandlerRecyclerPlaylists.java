@@ -4,12 +4,15 @@ import android.view.View;
 
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.feather.Adapters.PlaylistAdapter;
 import com.feather.dataElements.DataPlaylist;
+import com.feather.dataElements.DataSong;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 public class HandlerRecyclerPlaylists implements PlaylistAdapter.OnPlaylistListener {
     private View mView;
@@ -24,16 +27,18 @@ public class HandlerRecyclerPlaylists implements PlaylistAdapter.OnPlaylistListe
         mRecyclerID = recyclerID;
 
         recyclerView = mView.findViewById(recyclerID);
-        playlists = new ArrayList<DataPlaylist>();
+        playlists = new ArrayList<>();
         mParentActivity = parentActivity;
     }
 
-    public void createPlaylists(int playlistsAmount, boolean isScrollable, int orientation, int spanCount) {
+    public void createPlaylists(int playlistsAmount, boolean isScrollable, int orientation,
+                                int spanCount, int card_viewID) {
         for (int numPlaylist = 0; numPlaylist < playlistsAmount; numPlaylist++) {
             playlists.add(new DataPlaylist(R.drawable.icon_awesome_book_open));
         }
 
-        mAdapter = new PlaylistAdapter(playlists, this, mParentActivity);
+        mAdapter = new PlaylistAdapter(playlists, this,
+                mParentActivity, card_viewID);
         GridLayoutManager gridLayoutManager;
 
         if (orientation == GridLayoutManager.HORIZONTAL) {
@@ -57,6 +62,21 @@ public class HandlerRecyclerPlaylists implements PlaylistAdapter.OnPlaylistListe
 
         recyclerView.setLayoutManager(gridLayoutManager);
         recyclerView.setAdapter(mAdapter);
+    }
+
+    public void createPlaylist(DataPlaylist playlist, int card_viewID) {
+        mAdapter = new PlaylistAdapter(playlist, this,
+                mParentActivity, card_viewID);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mView.getContext()) {
+            @Override
+            public boolean canScrollVertically() {
+                return false;
+            }
+        };
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setAdapter(mAdapter);
+
     }
 
     @Override

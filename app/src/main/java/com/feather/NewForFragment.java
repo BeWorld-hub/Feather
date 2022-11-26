@@ -17,11 +17,13 @@ public class NewForFragment extends Fragment {
 
         HandlerRecyclerPlaylists handlerRecyclerNewForYou = new HandlerRecyclerPlaylists(view,
                 R.id.recyclerNewForYou, getActivity());
-        handlerRecyclerNewForYou.createPlaylists(8, true, GridLayoutManager.HORIZONTAL, 2);
+        handlerRecyclerNewForYou.createPlaylists(8, true, GridLayoutManager.HORIZONTAL, 2,
+                R.layout.card_view_playlist);
 
         HandlerRecyclerPlaylists handlerRecyclerYouSubscribe = new HandlerRecyclerPlaylists(view,
                 R.id.recyclerYouSubscribe, getActivity());
-        handlerRecyclerYouSubscribe.createPlaylists(6, false, GridLayoutManager.VERTICAL, 2);
+        handlerRecyclerYouSubscribe.createPlaylists(6, false, GridLayoutManager.VERTICAL, 2,
+                R.layout.card_view_playlist);
 
         return view;
     }

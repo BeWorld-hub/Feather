@@ -10,11 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public class StreamingFragment extends Fragment {
-
-    public StreamingFragment() {
-        // Required empty public constructor
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -23,12 +18,12 @@ public class StreamingFragment extends Fragment {
         HandlerRecyclerPlaylists handlerRecyclerOnAir = new HandlerRecyclerPlaylists(view,
                 R.id.recyclerOnAir, getActivity());
         handlerRecyclerOnAir.createPlaylists(8, true,
-                GridLayoutManager.HORIZONTAL, 2);
+                GridLayoutManager.HORIZONTAL, 2, R.layout.card_view_playlist);
 
         HandlerRecyclerPlaylists handlerRecyclerPremiers = new HandlerRecyclerPlaylists(view,
                 R.id.recyclerPremiers, getActivity());
         handlerRecyclerPremiers.createPlaylists(4, false,
-                GridLayoutManager.VERTICAL, 2);
+                GridLayoutManager.VERTICAL, 2, R.layout.card_view_playlist);
 
         return view;
     }

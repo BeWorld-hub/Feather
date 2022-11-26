@@ -22,17 +22,17 @@ public class PlaylistsFragment extends Fragment {
         HandlerRecyclerPlaylists handlerRecyclerNewPlaylists = new HandlerRecyclerPlaylists(view,
                 R.id.recyclerNewPlaylists, getActivity());
         handlerRecyclerNewPlaylists.createPlaylists(4, false,
-                GridLayoutManager.VERTICAL, 2);
+                GridLayoutManager.VERTICAL, 2, R.layout.card_view_playlist);
 
         HandlerRecyclerPlaylists handlerRecyclerAtTrendPlaylists = new HandlerRecyclerPlaylists(view,
                 R.id.recyclerAtTrendPlaylists, getActivity());
         handlerRecyclerAtTrendPlaylists.createPlaylists(4, false,
-                GridLayoutManager.VERTICAL, 2);
+                GridLayoutManager.VERTICAL, 2, R.layout.card_view_playlist);
 
         HandlerRecyclerPlaylists handlerRecyclerSelectionPlaylists = new HandlerRecyclerPlaylists(view,
                 R.id.recyclerSelectionPlaylists, getActivity());
         handlerRecyclerSelectionPlaylists.createPlaylists(4, true,
-                GridLayoutManager.HORIZONTAL, 1);
+                GridLayoutManager.HORIZONTAL, 1, R.layout.card_view_playlist);
 
         return view;
     }
