@@ -2,6 +2,7 @@ package com.feather;
 
 import android.os.Bundle;
 
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -72,6 +73,7 @@ public class SearchFragment extends Fragment {
         songs.add(new DataSong("Test", R.drawable.icon_awesome_book_open, 1));
 
 
+        SearchView searchView = view.findViewById(R.id.searchView);
 
         HandlerHistory handlerHistory = new HandlerHistory(view, getActivity(),
                 R.id.recyclerSearchedHistorySongs);
