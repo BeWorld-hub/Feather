@@ -41,13 +41,12 @@
             android:layout_gravity="center">
 
             <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/test2"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tool:src="@tools:sample/avatars" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
                 android:layout_width="wrap_content"
@@ -140,29 +139,31 @@
             android:id="@+id/buttonRepeatPlaylist"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             android:src="@drawable/icon_ionic_ios_repeat"
-            app:layout_constraintEnd_toStartOf="@id/buttonSharePlaylist"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/buttonSharePlaylist"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <ImageButton
             android:id="@+id/buttonSharePlaylist"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/icon_ionic_ios_redo"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/buttonShufflePlaylist"
             app:layout_constraintStart_toEndOf="@id/buttonRepeatPlaylist"
-            app:layout_constraintEnd_toStartOf="@id/buttonShufflePlaylist"/>
+            app:layout_constraintTop_toTopOf="parent" />
+
         <ImageButton
             android:id="@+id/buttonShufflePlaylist"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/icon_ionic_ios_shuffle"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/buttonSharePlaylist"/>
+            app:layout_constraintStart_toEndOf="@id/buttonSharePlaylist"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

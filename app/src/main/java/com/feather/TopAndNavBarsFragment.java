@@ -15,7 +15,7 @@ import android.widget.ImageButton;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
-public class BasicConstructionFragment extends Fragment implements NavigationBarView.OnItemSelectedListener, View.OnClickListener {
+public class TopAndNavBarsFragment extends Fragment implements NavigationBarView.OnItemSelectedListener, View.OnClickListener {
     private BottomNavigationView mMenu;
     private ImageButton mButtonSetting;
     private ImageButton mButtonHistory;
@@ -29,8 +29,8 @@ public class BasicConstructionFragment extends Fragment implements NavigationBar
     private HistoryFragment mHistoryFragment;
     private SearchFragment mSearchFragment;
 
-    public BasicConstructionFragment() {
-        super(R.layout.fragment_basic_construction);
+    public TopAndNavBarsFragment() {
+        super(R.layout.fragment_top_and_nav_bars);
 
         mMainFragment = new MainFragment();
         mPlaylistsFragment = new PlaylistsFragment();
@@ -43,7 +43,7 @@ public class BasicConstructionFragment extends Fragment implements NavigationBar
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_basic_construction, container, false);
+        View view = inflater.inflate(R.layout.fragment_top_and_nav_bars, container, false);
 
         if (savedInstanceState == null) {
             getParentFragmentManager().beginTransaction().setReorderingAllowed(true)

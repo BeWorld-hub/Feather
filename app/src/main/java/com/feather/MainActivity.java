@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().setReorderingAllowed(true)
-                    .add(R.id.fragmentMainActivity, BasicConstructionFragment.class, null).commit();
+                    .add(R.id.fragmentMainActivity, TopAndNavBarsFragment.class, null).commit();
         }
     }
 }

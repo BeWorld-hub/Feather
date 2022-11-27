@@ -9,10 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.feather.Adapters.PlaylistAdapter;
 import com.feather.dataElements.DataPlaylist;
-import com.feather.dataElements.DataSong;
 
 import java.util.ArrayList;
-import java.util.Stack;
 
 public class HandlerRecyclerPlaylists implements PlaylistAdapter.OnPlaylistListener {
     private View mView;
@@ -82,6 +80,6 @@ public class HandlerRecyclerPlaylists implements PlaylistAdapter.OnPlaylistListe
     @Override
     public void OnPlaylistClick(int position, FragmentActivity activity) {
         activity.getSupportFragmentManager().beginTransaction().setReorderingAllowed(true)
-                .replace(R.id.fragmentMainActivity, new PlaylistFragment()).commit();
+                .replace(R.id.fragmentMainActivity, new TopBarFragment()).commit();
     }
 }
