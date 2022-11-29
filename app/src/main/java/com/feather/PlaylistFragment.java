@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 
 public class PlaylistFragment extends Fragment {
 
-    PlaylistFragment() {
+    public PlaylistFragment() {
         super(R.layout.fragment_playlist);
     }
 
@@ -21,4 +21,6 @@ public class PlaylistFragment extends Fragment {
 
         return view;
     }
+
+
 }

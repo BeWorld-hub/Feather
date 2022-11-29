@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridLayout;
 
+import com.feather.Handlers.HandlerRecyclerPlaylists;
 import com.feather.dataElements.DataPlaylist;
 import com.feather.dataElements.DataSong;
 

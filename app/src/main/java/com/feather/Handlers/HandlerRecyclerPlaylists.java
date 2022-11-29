@@ -1,4 +1,4 @@
-package com.feather;
+package com.feather.Handlers;
 
 import android.view.View;
 
@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.feather.Adapters.PlaylistAdapter;
+import com.feather.R;
+import com.feather.TopBarFragment;
 import com.feather.dataElements.DataPlaylist;
 
 import java.util.ArrayList;

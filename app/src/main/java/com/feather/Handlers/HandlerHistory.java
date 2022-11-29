@@ -1,13 +1,13 @@
-package com.feather;
+package com.feather.Handlers;
 
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.fragment.app.FragmentActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.feather.R;
 import com.feather.dataElements.DataSong;
 
 import java.util.ArrayList;

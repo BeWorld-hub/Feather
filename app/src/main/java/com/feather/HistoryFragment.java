@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.feather.Handlers.HandlerHistory;
 import com.feather.dataElements.DataSong;
 
 import java.util.ArrayList;
