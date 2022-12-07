@@ -3,21 +3,17 @@
 
     <item
         android:id="@+id/mainButtonMenu"
-        android:icon="@drawable/icon_awesome_play"
-        android:title="Main" />
+        android:icon="@drawable/icon_ionic_ios_heart_32" />
 
     <item
         android:id="@+id/playlistsButtonMenu"
-        android:icon="@drawable/icon_awesome_book_open"
-        android:title="Playlists" />
+        android:icon="@drawable/icon_awesome_book_open" />
 
     <item
         android:id="@+id/streamingButtonMenu"
-        android:icon="@drawable/icon_material_radio"
-        android:title="Streaming" />
+        android:icon="@drawable/icon_material_radio" />
 
     <item
         android:id="@+id/profileButtonMenu"
-        android:icon="@drawable/icon_material_person"
-        android:title="Profile" />
+        android:icon="@drawable/icon_material_person" />
 </menu>

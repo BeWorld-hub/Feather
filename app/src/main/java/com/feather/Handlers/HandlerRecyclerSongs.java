@@ -56,6 +56,8 @@ public class HandlerRecyclerSongs implements SongRecyclerAdapter.OnSongCardListe
     @Override
     public void onSongCardClick(int position) {
         mParentActivity.getSupportFragmentManager().beginTransaction().setReorderingAllowed(true)
-                .replace(R.id.fragmentMainActivity, new PlaylistFragment()).commit();
+                .replace(R.id.fragmentMainActivity, new PlaylistFragment())
+                .addToBackStack("test")
+                .commit();
     }
 }

@@ -3,29 +3,32 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="150dp"
-    android:layout_height="60dp"
-    app:cardBackgroundColor="@color/cardview_dark_background"
-    app:cardCornerRadius="10dp"
-    android:layout_margin="8dp">
+    android:layout_width="155dp"
+    android:layout_height="50dp"
+    android:layout_margin="8dp"
+    app:cardBackgroundColor="@color/cards_background_color"
+    app:cardCornerRadius="10dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent">
 
         <ImageView
+            android:foregroundGravity="right"
             android:id="@+id/imageSong"
             android:layout_width="54dp"
-            android:layout_height="70dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/avatars" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/nameSong"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
             android:text="TextView"
             android:textColor="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"

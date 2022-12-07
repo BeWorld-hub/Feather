@@ -28,12 +28,12 @@ public class MainFragment extends Fragment implements View.OnClickListener, Song
     private void initalizeData() {
         lastSongs = new Stack<DataSong>();
 
-        lastSongs.add(new DataSong("test", R.drawable.icon_awesome_book_open, 1));
-        lastSongs.add(new DataSong("test", R.drawable.icon_awesome_book_open, 1));
-        lastSongs.add(new DataSong("test", R.drawable.icon_awesome_book_open, 1));
-        lastSongs.add(new DataSong("test", R.drawable.icon_awesome_book_open, 1));
-        lastSongs.add(new DataSong("test", R.drawable.icon_awesome_book_open, 1));
-        lastSongs.add(new DataSong("test", R.drawable.icon_awesome_book_open, 1));
+        lastSongs.add(new DataSong("test", R.drawable.test2, 1));
+        lastSongs.add(new DataSong("test", R.drawable.test2, 1));
+        lastSongs.add(new DataSong("test", R.drawable.test2, 1));
+        lastSongs.add(new DataSong("test", R.drawable.test2, 1));
+        lastSongs.add(new DataSong("test", R.drawable.test2, 1));
+        lastSongs.add(new DataSong("test", R.drawable.test2, 1));
     }
 
     @Override
